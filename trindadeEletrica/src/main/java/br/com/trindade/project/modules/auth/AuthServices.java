@@ -1,0 +1,61 @@
+package br.com.trindade.project.modules.auth;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+import br.com.trindade.project.core.security.JwtTokenProvider;
+import br.com.trindade.project.core.security.vo.AccountCredentialsVO;
+import br.com.trindade.project.core.security.vo.TokenVO;
+import br.com.trindade.project.modules.user.UserRepository;
+
+@Service
+public class AuthServices {
+
+	@Autowired
+	private AuthenticationManager authenticationManager;
+
+	@Autowired
+	private JwtTokenProvider tokenProvider;
+
+	@Autowired
+	private UserRepository repository;
+
+	@SuppressWarnings("rawtypes")
+	public ResponseEntity signin(AccountCredentialsVO data) {
+		try {
+			var username = data.getUsername();
+			var password = data.getPassword();
+			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
+
+			var user = repository.findByUsername(username);
+
+			var tokenResponse = new TokenVO();
+			if (user != null) {
+				tokenResponse = tokenProvider.createAccessToken(username, user.getId(), user.getRoles(),user.getPerfil());
+			} else {
+				throw new UsernameNotFoundException("Username " + username + " not found!");
+			}
+			return ResponseEntity.ok(tokenResponse);
+		} catch (Exception e) {
+			throw new BadCredentialsException("Invalid username/password supplied!");
+		}
+	}
+
+	@SuppressWarnings("rawtypes")
+	public ResponseEntity refreshToken(String username, String refreshToken) {
+		var user = repository.findByUsername(username);
+
+		var tokenResponse = new TokenVO();
+		if (user != null) {
+			tokenResponse = tokenProvider.refreshToken(refreshToken, user.getPerfil(), user.getId());
+		} else {
+			throw new UsernameNotFoundException("Username " + username + " not found!");
+		}
+		return ResponseEntity.ok(tokenResponse);
+	}
+}

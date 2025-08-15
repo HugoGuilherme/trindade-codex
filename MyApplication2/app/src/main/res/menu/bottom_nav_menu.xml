@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_agendamento_cliente"
+        android:icon="@drawable/ic_agendamento"
+        android:title="Agendamento"/>
+
+    <item
+        android:id="@+id/nav_servicos_cliente"
+        android:icon="@drawable/ic_servicos"
+        android:title="Serviços"/>
+
+    <item
+        android:id="@+id/nav_perfil_cliente"
+        android:icon="@drawable/ic_perfil"
+        android:title="Perfil"/>
+</menu>

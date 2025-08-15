@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_limpeza_painel"
+        android:title="Limpeza Painel Solar" />
+
+    <item
+        android:id="@+id/nav_outro_item"
+        android:title="Outro Item" />
+
+</menu>

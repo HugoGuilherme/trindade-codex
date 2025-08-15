@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <!-- Parte com as Informações -->
+        <LinearLayout
+            android:layout_width="98dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:paddingEnd="16dp">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nome"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvTelefoneAgendamentoCliente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvEnderecoCliente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Endereço"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvDataInstalacao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Data de instalação"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvDataUltimaInstalacao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Última limpeza"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_next_cleaning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Próxima limpeza: --/--/----"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Contador de Dias Restantes -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:gravity="center"
+                android:text="FALTAM"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/diasRestantes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:gravity="center"
+                android:text="30"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="DIAS"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
