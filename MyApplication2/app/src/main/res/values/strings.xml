@@ -2,7 +2,7 @@
     <string name="app_name">Trindade Organizações</string>
     <string name="navigation_drawer_open">Abrir Menu</string>
     <string name="navigation_drawer_close">Fechar Menu</string>
-    <string name="server_ip">100.91.194.110</string>
+    <string name="server_ip">192.168.10.2</string>
     <string name="limpeza_do_painel_solar">Limpeza do Painel Solar</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
