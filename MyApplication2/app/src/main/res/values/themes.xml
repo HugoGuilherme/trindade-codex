@@ -1,10 +1,35 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.MyApplication" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="android:windowTranslucentStatus">false</item>
+    <!-- Tema da aplicação (claro) -->
+    <style name="Theme.MyApplication" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Cor primária (Toolbar, FAB, botões) -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+
+        <!-- Cor secundária (destaques, seleções) -->
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+
+        <!-- Cor de fundo -->
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="android:textColor">@color/colorOnBackground</item>
+
+        <!-- Toolbar -->
+        <item name="toolbarStyle">@style/Widget.MyApplication.Toolbar</item>
+
+        <!-- FAB -->
+        <item name="floatingActionButtonStyle">@style/Widget.MyApplication.FAB</item>
     </style>
 
-    <style name="Theme.MyApplication" parent="Base.Theme.MyApplication" />
+    <!-- Toolbar custom -->
+    <style name="Widget.MyApplication.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="titleTextColor">@color/colorOnPrimary</item>
+        <item name="subtitleTextColor">@color/colorOnPrimary</item>
+    </style>
+
+    <!-- FAB custom -->
+    <style name="Widget.MyApplication.FAB" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">@color/colorPrimary</item>
+        <item name="tint">@color/colorOnPrimary</item>
+    </style>
 </resources>
