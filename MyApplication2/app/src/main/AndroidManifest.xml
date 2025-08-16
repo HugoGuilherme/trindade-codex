@@ -26,6 +26,16 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".pages.FormularioAgendaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".pages.agenda.AgendaItem"
+            android:exported="false" />
+        <activity
+            android:name=".pages.AgendaActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".pages.HomeActivity"
             android:exported="true" />
         <activity

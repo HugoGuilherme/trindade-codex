@@ -30,6 +30,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:hint="Nome da tarefa">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/inputNomeTarefa"
@@ -40,6 +41,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:hint="Cliente">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/inputCliente"
@@ -50,6 +52,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:hint="Colaborador">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/inputColaborador"
@@ -60,6 +63,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:hint="Local">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/inputLocal"
@@ -70,6 +74,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:hint="Data (dd/mm/aaaa)">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/inputData"
@@ -81,6 +86,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:hint="Hora (hh:mm)">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/inputHora"
