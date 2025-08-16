@@ -10,6 +10,10 @@
         android:title="Perfil"/>
 
     <item
+        android:id="@+id/nav_agenda"
+        android:title="Agenda"/>
+
+    <item
         android:id="@+id/nav_clientes"
         android:title="Clientes"/>
 
@@ -17,9 +21,6 @@
         android:id="@+id/nav_agendamentos"
         android:title="Agendamentos"/>
 
-    <item
-        android:id="@+id/nav_agenda"
-        android:title="Agenda"/>
 
     <item
         android:id="@+id/nav_logout"

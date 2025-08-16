@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Azul escuro da Toolbar e FAB (mesmo do claro, pra manter identidade) -->
+    <color name="colorPrimary">#04214D</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+
+    <!-- Azul secundário no escuro (um pouco mais claro pra contraste) -->
+    <color name="colorSecondary">#64B5F6</color>
+    <color name="colorOnSecondary">#000000</color>
+
+    <!-- Fundo da aplicação (escuro) -->
+    <color name="colorBackground">#121212</color>
+    <color name="colorOnBackground">#FFFFFF</color>
+</resources>

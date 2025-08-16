@@ -1,0 +1,117 @@
+erDiagram
+    %% ========================
+    %% Dominio Cliente
+    %% ========================
+    cliente {
+        int id
+        date data_nascimento
+        string email
+        string endereco
+        string genero
+        string nome
+        string telefone
+    }
+
+    residencias {
+        int id
+        string cep
+        string cidade
+        string descricao
+        string endereco
+        string estado
+        int cliente_id
+    }
+
+    agendamento_limpeza {
+        int id
+        date data_instalacao
+        string email
+        string endereco
+        int meses
+        string nome
+        int user_id
+        date data_ultima_limpeza
+        date data_da_proxima_limpeza
+        int cliente_id
+    }
+
+    %% ========================
+    %% Dominio Agenda e Tarefas
+    %% ========================
+    agenda {
+        int id
+        string titulo
+        string descricao
+        datetime data_criacao
+        datetime data_inicio
+        datetime data_fim
+        int user_id
+    }
+
+    tarefa {
+        int id
+        string descricao
+        datetime data_hora
+        string status
+        int agenda_id
+        int cliente_id
+        int colaborador_id
+        int tipo_tarefa_id
+    }
+
+    tipo_tarefa {
+        int id
+        string nome
+        string descricao
+    }
+
+    %% ========================
+    %% Dominio Usuários
+    %% ========================
+    users {
+        int id
+        string user_name
+        string full_name
+        string password
+        bool account_non_expired
+        bool account_non_locked
+        bool credentials_non_expired
+        bool enabled
+        int perfil_id
+    }
+
+    perfil {
+        int id
+        date data_nascimento
+        string email
+        string endereco
+        string genero
+        string nome
+        string telefone
+    }
+
+    user_permission {
+        int id_user
+        int id_permission
+    }
+
+    permission {
+        int id
+        string description
+    }
+
+    %% ========================
+    %% Relacionamentos
+    %% ========================
+    cliente ||--o{ residencias : possui
+    cliente ||--o{ agendamento_limpeza : possui
+    cliente ||--o{ tarefa : recebe
+
+    users ||--o{ agendamento_limpeza : cria
+    users ||--o{ tarefa : executa
+    users ||--|| perfil : pertence
+    users ||--o{ user_permission : possui
+    permission ||--o{ user_permission : concedida
+
+    agenda ||--o{ tarefa : contem
+    tipo_tarefa ||--o{ tarefa : classifica
