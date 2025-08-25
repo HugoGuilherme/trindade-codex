@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.hugo.myapplication.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AgendaAdapter extends RecyclerView.Adapter<AgendaAdapter.ViewHolder> {
@@ -32,14 +33,34 @@ public class AgendaAdapter extends RecyclerView.Adapter<AgendaAdapter.ViewHolder
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         AgendaItem item = lista.get(position);
 
-        // Se vier null, String.valueOf converte em "null"
-        String hora = String.valueOf(item.getHora());
-        String titulo = String.valueOf(item.getTitulo());
-        String descricao = String.valueOf(item.getDescricao());
+        holder.txtTitulo.setText(item.getTitulo());
+        holder.txtStatus.setText("Status: " + item.getStatus());
+        holder.txtDataHora.setText(item.getDataHora());
 
-        holder.txtHoraTitulo.setText(hora + " - " + titulo);
-        holder.txtDescricao.setText(descricao);
+        // Novo: tipo de tarefa
+        holder.txtTipoTarefa.setText("Tipo: " + item.getTipoTarefaNome());
+
+        // junta colaboradores em uma única linha
+        if (item.getColaboradores() != null && !item.getColaboradores().isEmpty()) {
+            List<String> nomesFormatados = new ArrayList<>();
+            for (String nome : item.getColaboradores()) {
+                String[] partes = nome.trim().split("\\s+");
+                if (partes.length >= 2) {
+                    nomesFormatados.add(partes[0] + " " + partes[1]);
+                } else {
+                    nomesFormatados.add(partes[0]);
+                }
+            }
+            holder.txtColaboradores.setText("Colaboradores: " + String.join(", ", nomesFormatados));
+        } else {
+            holder.txtColaboradores.setText("Colaboradores: -");
+        }
+
+        // mostra endereço + cliente
+        String enderecoCliente = item.getResidenciaEndereco() + " - Cliente: " + item.getClienteNome();
+        holder.txtEnderecoCliente.setText(enderecoCliente);
     }
+
 
     @Override
     public int getItemCount() {
@@ -47,12 +68,16 @@ public class AgendaAdapter extends RecyclerView.Adapter<AgendaAdapter.ViewHolder
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView txtHoraTitulo, txtDescricao;
+        TextView txtTitulo, txtTipoTarefa, txtStatus, txtDataHora, txtColaboradores, txtEnderecoCliente;
 
         ViewHolder(View itemView) {
             super(itemView);
-            txtHoraTitulo = itemView.findViewById(R.id.txtHoraTitulo);
-            txtDescricao = itemView.findViewById(R.id.txtDescricao);
+            txtTitulo = itemView.findViewById(R.id.txtTitulo);
+            txtTipoTarefa = itemView.findViewById(R.id.txtTipoTarefa); // novo
+            txtStatus = itemView.findViewById(R.id.txtStatus);
+            txtDataHora = itemView.findViewById(R.id.txtDataHora);
+            txtColaboradores = itemView.findViewById(R.id.txtColaboradores);
+            txtEnderecoCliente = itemView.findViewById(R.id.txtEnderecoCliente);
         }
     }
 

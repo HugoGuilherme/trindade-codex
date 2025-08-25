@@ -5,16 +5,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!-- Toolbar com botão de voltar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="#04214D"
-        android:textAlignment="center"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:title="Agendamentos"
-        app:titleTextColor="@android:color/white" />
+        app:titleTextColor="@android:color/white"
+        app:navigationIcon="@drawable/abc_ic_ab_back_material"
+        app:navigationIconTint="@android:color/white"/>
+
 
     <!-- Menu centralizado -->
     <LinearLayout

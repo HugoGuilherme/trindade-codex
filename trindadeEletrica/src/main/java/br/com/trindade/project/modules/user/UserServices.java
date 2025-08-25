@@ -1,5 +1,6 @@
 package br.com.trindade.project.modules.user;
 
+import java.util.List;
 import java.util.logging.Logger;
 
 import org.springframework.security.core.userdetails.UserDetails;
@@ -37,4 +38,8 @@ public class UserServices implements UserDetailsService {
 		user.setPassword(encodedPassword);
 		return repository.save(user);
 	}
+
+    public List<User> findAll() {
+        return repository.findAll();
+    }
 }

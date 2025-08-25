@@ -12,23 +12,73 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="12dp">
 
-    <TextView
-        android:id="@+id/txtHoraTitulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="09:00 - Mock Reunião"
-        android:textStyle="bold"
-        android:textSize="16sp"/>
+        <!-- 🔹 Título -->
+        <TextView
+            android:id="@+id/txtTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mock Reunião"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:ellipsize="end"
+            android:singleLine="true"/>
 
-    <TextView
-        android:id="@+id/txtDescricao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sala 101 - Cliente Exemplo"
-        android:textSize="14sp"
-        android:layout_marginTop="4dp" />
+        <!-- 🔹 Status -->
+        <TextView
+            android:id="@+id/txtStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status: PENDENTE"
+            android:textStyle="italic"
+            android:textSize="14sp"
+            android:layout_marginTop="2dp"
+            android:textColor="@android:color/holo_red_dark"/>
+
+        <!-- 🔹 Tipo de Tarefa -->
+        <TextView
+            android:id="@+id/txtTipoTarefa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tipo: Instalação"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:layout_marginTop="2dp"/>
+
+        <!-- 🔹 Data e Hora -->
+        <TextView
+            android:id="@+id/txtDataHora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="19/08/2025 - 09:00"
+            android:textSize="14sp"
+            android:layout_marginTop="6dp"/>
+
+        <!-- 🔹 Colaboradores -->
+        <TextView
+            android:id="@+id/txtColaboradores"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Colaboradores: Gabriel, Douglas"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            android:ellipsize="none"
+            android:scrollHorizontally="false"
+            android:singleLine="false"
+            android:inputType="textMultiLine"/>
+
+
+        <!-- 🔹 Endereço + Cliente -->
+        <TextView
+            android:id="@+id/txtEnderecoCliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rua Exemplo, 123 - Cliente: Fábio (Realengo)"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:singleLine="true"/>
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

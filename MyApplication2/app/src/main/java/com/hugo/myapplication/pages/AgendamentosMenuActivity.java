@@ -22,9 +22,14 @@ public class AgendamentosMenuActivity extends AppCompatActivity {
         // Configurar Toolbar com botão de voltar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setTitle("Agendamentos");
+        }
+
+        if (toolbar.getNavigationIcon() != null) {
+            toolbar.getNavigationIcon().setTint(getResources().getColor(android.R.color.white));
         }
 
         // Configurar clique no botão de voltar
@@ -42,4 +47,5 @@ public class AgendamentosMenuActivity extends AppCompatActivity {
             Toast.makeText(this, "Outro item selecionado!", Toast.LENGTH_SHORT).show();
         });
     }
+
 }

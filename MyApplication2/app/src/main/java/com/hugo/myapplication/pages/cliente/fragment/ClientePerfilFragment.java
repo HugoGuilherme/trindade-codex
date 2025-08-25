@@ -1,5 +1,6 @@
 package com.hugo.myapplication.pages.cliente.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,7 +15,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.hugo.myapplication.R;
+import com.hugo.myapplication.pages.cliente.actions.ClientePainelEdit;
 import com.hugo.myapplication.pages.cliente.residencia.Residencia;
 import com.hugo.myapplication.pages.cliente.residencia.ResidenciaAdapter;
 import com.hugo.myapplication.utils.ApiHelper;
@@ -73,6 +76,17 @@ public class ClientePerfilFragment extends Fragment {
         } else {
             Toast.makeText(getContext(), "Erro: clienteId inválido", Toast.LENGTH_LONG).show();
         }
+
+        FloatingActionButton fabEditar = view.findViewById(R.id.editar_perfil);
+        fabEditar.setOnClickListener(v -> {
+            if (clienteId != -1) {
+                Intent intent = new Intent(getContext(), ClientePainelEdit.class);
+                intent.putExtra("clienteId", clienteId);
+                startActivity(intent);
+            } else {
+                Toast.makeText(getContext(), "Cliente não carregado", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         return view;
     }
