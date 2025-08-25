@@ -121,4 +121,36 @@ public class DateUtils {
             return isoDate; // Se der erro, retorna a string original
         }
     }
+
+    // ✅ NOVO: junta data dd/MM/yyyy + hora HH:mm -> ISO yyyy-MM-dd'T'HH:mm:ss
+    public static String convertDateTimeToISO(String dateStr, String timeStr) {
+        try {
+            SimpleDateFormat inputFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault());
+            SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
+
+            Date dateTime = inputFormat.parse(dateStr + " " + timeStr);
+            return outputFormat.format(dateTime);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    /**
+     * Converte uma string ISO (yyyy-MM-dd'T'HH:mm:ss) para dd/MM/yyyy - HH:mm
+     */
+    public static String formatDateTime(String isoDateTime) {
+        if (isoDateTime == null || isoDateTime.isEmpty()) return "";
+
+        try {
+            SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
+            SimpleDateFormat outputFormat = new SimpleDateFormat("dd/MM/yyyy - HH:mm", Locale.getDefault());
+            Date date = inputFormat.parse(isoDateTime);
+            return outputFormat.format(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return isoDateTime; // fallback
+        }
+    }
+
 }

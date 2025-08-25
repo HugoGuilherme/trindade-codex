@@ -21,6 +21,9 @@
         android:id="@+id/nav_agendamentos"
         android:title="Agendamentos"/>
 
+    <item
+        android:id="@+id/nav_tipos_tarefa"
+        android:title="Tipo de Tarefa"/>
 
     <item
         android:id="@+id/nav_logout"

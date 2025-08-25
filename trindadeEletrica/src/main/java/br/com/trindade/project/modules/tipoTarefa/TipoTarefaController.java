@@ -38,9 +38,10 @@ public class TipoTarefaController {
         return ResponseEntity.ok(tipoTarefaService.salvar(tipoTarefa));
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletar(@PathVariable Long id) {
+   @DeleteMapping("/{id}")
+    public ResponseEntity<String> deletar(@PathVariable Long id) {
         tipoTarefaService.deletar(id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok("Excluído com sucesso"); // 200 + texto simples
     }
+
 }

@@ -11,5 +11,7 @@
     <!-- Fundo da aplicação (claro) -->
     <color name="colorBackground">#FFFFFF</color>
     <color name="colorOnBackground">#000000</color>
+    <color name="yellowAccent">#04214D</color>
+
 </resources>
 

@@ -6,7 +6,7 @@
         <item name="colorOnPrimary">@color/colorOnPrimary</item>
 
         <!-- Cor secundária (destaques, seleções) -->
-        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondary">@color/yellowAccent</item>
         <item name="colorOnSecondary">@color/colorOnSecondary</item>
 
         <!-- Cor de fundo -->

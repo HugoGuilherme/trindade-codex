@@ -4,7 +4,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorOnPrimary">@color/colorOnPrimary</item>
 
-        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondary">@color/yellowAccent</item>
         <item name="colorOnSecondary">@color/colorOnSecondary</item>
 
         <item name="android:colorBackground">@color/colorBackground</item>
@@ -12,5 +12,7 @@
 
         <item name="toolbarStyle">@style/Widget.MyApplication.Toolbar</item>
         <item name="floatingActionButtonStyle">@style/Widget.MyApplication.FAB</item>
+
+
     </style>
 </resources>

@@ -69,6 +69,8 @@ public class BaseActivity extends AppCompatActivity {
                     startActivity(new Intent(this, AgendamentosMenuActivity.class));
                 } else if (id == R.id.nav_agenda) {
                     startActivity(new Intent(this, AgendaActivity.class));
+                } else if (id == R.id.nav_tipos_tarefa) {
+                    startActivity(new Intent(this, ListarTipoTarefaActivity.class));
                 } else if (id == R.id.nav_logout) {
                     logout();
                 }

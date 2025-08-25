@@ -1,10 +1,12 @@
 package br.com.trindade.project.modules.tarefa;
 
-
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import br.com.trindade.project.modules.agenda.Agenda;
 import br.com.trindade.project.modules.cliente.Cliente;
+import br.com.trindade.project.modules.residencia.Residencia;
 import br.com.trindade.project.modules.tipoTarefa.TipoTarefa;
 import br.com.trindade.project.modules.user.User;
 import jakarta.persistence.Entity;
@@ -14,6 +16,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -39,13 +43,21 @@ public class Tarefa {
     @JoinColumn(name = "cliente_id", nullable = false)
     private Cliente cliente;
 
-    @ManyToOne
-    @JoinColumn(name = "colaborador_id", nullable = false)
-    private User colaborador;
+    @ManyToMany
+    @JoinTable(
+            name = "tarefa_colaboradores",
+            joinColumns = @JoinColumn(name = "tarefa_id"),
+            inverseJoinColumns = @JoinColumn(name = "colaborador_id")
+    )
+    private List<User> colaboradores = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "tipo_tarefa_id", nullable = false)
     private TipoTarefa tipoTarefa;
+
+    @ManyToOne
+    @JoinColumn(name = "residencia_id", nullable = false)
+    private Residencia residencia;
 
     public Long getId() {
         return id;
@@ -95,14 +107,6 @@ public class Tarefa {
         this.cliente = cliente;
     }
 
-    public User getColaborador() {
-        return colaborador;
-    }
-
-    public void setColaborador(User colaborador) {
-        this.colaborador = colaborador;
-    }
-
     public TipoTarefa getTipoTarefa() {
         return tipoTarefa;
     }
@@ -111,6 +115,20 @@ public class Tarefa {
         this.tipoTarefa = tipoTarefa;
     }
 
-    // Getters e Setters
-    
+    public Residencia getResidencia() {
+        return residencia;
+    }
+
+    public void setResidencia(Residencia residencia) {
+        this.residencia = residencia;
+    }
+
+    public List<User> getColaboradores() {
+        return colaboradores;
+    }
+
+    public void setColaboradores(List<User> colaboradores) {
+        this.colaboradores = colaboradores;
+    }
+
 }

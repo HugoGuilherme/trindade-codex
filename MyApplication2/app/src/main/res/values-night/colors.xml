@@ -11,4 +11,6 @@
     <!-- Fundo da aplicação (escuro) -->
     <color name="colorBackground">#121212</color>
     <color name="colorOnBackground">#FFFFFF</color>
+    <color name="yellowAccent">#FFC107</color>
+
 </resources>

@@ -84,6 +84,7 @@ public class Cliente {
 	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
+	
 
 	@Override
 	public int hashCode() {
@@ -144,6 +145,14 @@ public class Cliente {
 		} else if (!telefone.equals(other.telefone))
 			return false;
 		return true;
+	}
+
+	public List<Residencia> getResidencias() {
+		return residencias;
+	}
+
+	public void setResidencias(List<Residencia> residencias) {
+		this.residencias = residencias;
 	}
 
 }
