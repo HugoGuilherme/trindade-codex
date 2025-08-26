@@ -39,14 +39,6 @@ public class AgendaActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setupToolbarAndNavigation(R.layout.agenda_activity,  false);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle("Agenda");
-        }
-        toolbar.setNavigationOnClickListener(v -> onBackPressed());
 
         // RecyclerView
         recyclerAgenda = findViewById(R.id.agendaRecyclerView);
